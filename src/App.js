@@ -1,24 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./styles/app.css";
+
+import RootPage from "./pages/root/index.jsx";
+import AbletonPage from "./pages/ableton/index.jsx";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<RootPage />} />
+        <Route path="/ableton" element={<AbletonPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
